@@ -9,7 +9,7 @@ pipeline {
                 sh 'touch build/car.txt'
                 sh 'echo "chassis" > build/car.txt'
                 sh 'echo "engine" >> build/car.txt'
-                sh 'echo "body" >> build/car.txt'
+                sh 'echo "interior" >> build/car.txt'
             }
         }
         stage('Test') {
@@ -17,7 +17,7 @@ pipeline {
                 sh 'test -f build/car.txt'
                 sh 'grep "chassis" build/car.txt'
                 sh 'grep "engine" build/car.txt'
-                sh 'grep "body" build/car.txt'
+                sh 'grep "interior" build/car.txt'
             }
         }
         stage('Publish'){
